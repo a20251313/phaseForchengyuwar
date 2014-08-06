@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8FE90E2E199207EB00C67766 /* JFPhaseXmlData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE90E2D199207EB00C67766 /* JFPhaseXmlData.m */; };
+		8FE90E311992080B00C67766 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE90E301992080B00C67766 /* GDataXMLNode.m */; };
+		8FE90E341992089C00C67766 /* JFIdiomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE90E331992089C00C67766 /* JFIdiomModel.m */; };
+		F50A691618BB0B3300AAB03E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A691518BB0B3300AAB03E /* Cocoa.framework */; };
+		F50A692018BB0B3300AAB03E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F50A691E18BB0B3300AAB03E /* InfoPlist.strings */; };
+		F50A692218BB0B3300AAB03E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A692118BB0B3300AAB03E /* main.m */; };
+		F50A692618BB0B3300AAB03E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F50A692418BB0B3300AAB03E /* Credits.rtf */; };
+		F50A692918BB0B3300AAB03E /* JFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A692818BB0B3300AAB03E /* JFAppDelegate.m */; };
+		F50A692C18BB0B3300AAB03E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50A692A18BB0B3300AAB03E /* MainMenu.xib */; };
+		F50A693518BB0B3300AAB03E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A693418BB0B3300AAB03E /* XCTest.framework */; };
+		F50A693618BB0B3300AAB03E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A691518BB0B3300AAB03E /* Cocoa.framework */; };
+		F50A693E18BB0B3300AAB03E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F50A693C18BB0B3300AAB03E /* InfoPlist.strings */; };
+		F50A694018BB0B3300AAB03E /* ParseForSqliteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A693F18BB0B3300AAB03E /* ParseForSqliteTests.m */; };
+		F50A694B18BB0B6200AAB03E /* JFPhaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A694A18BB0B6200AAB03E /* JFPhaseData.m */; };
+		F50A694E18BB0E6B00AAB03E /* SQLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A694D18BB0E6B00AAB03E /* SQLOperation.m */; };
+		F50A695918BB0E8D00AAB03E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A695018BB0E8D00AAB03E /* FMDatabase.m */; };
+		F50A695A18BB0E8D00AAB03E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A695218BB0E8D00AAB03E /* FMDatabaseAdditions.m */; };
+		F50A695B18BB0E8D00AAB03E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A695418BB0E8D00AAB03E /* FMDatabasePool.m */; };
+		F50A695C18BB0E8D00AAB03E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A695618BB0E8D00AAB03E /* FMDatabaseQueue.m */; };
+		F50A695D18BB0E8D00AAB03E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A695818BB0E8D00AAB03E /* FMResultSet.m */; };
+		F50A696018BB0EB700AAB03E /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A695F18BB0EB700AAB03E /* libxml2.2.dylib */; };
+		F50A696218BB0EF700AAB03E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A696118BB0EF700AAB03E /* libsqlite3.dylib */; };
+		F50A696518BB0F5100AAB03E /* JFSQLManger.m in Sources */ = {isa = PBXBuildFile; fileRef = F50A696418BB0F5100AAB03E /* JFSQLManger.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F50A693718BB0B3300AAB03E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F50A690A18BB0B3200AAB03E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F50A691118BB0B3300AAB03E;
+			remoteInfo = ParseForSqlite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8FE90E2C199207EB00C67766 /* JFPhaseXmlData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFPhaseXmlData.h; sourceTree = "<group>"; };
+		8FE90E2D199207EB00C67766 /* JFPhaseXmlData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFPhaseXmlData.m; sourceTree = "<group>"; };
+		8FE90E2F1992080B00C67766 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		8FE90E301992080B00C67766 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		8FE90E321992089C00C67766 /* JFIdiomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFIdiomModel.h; sourceTree = "<group>"; };
+		8FE90E331992089C00C67766 /* JFIdiomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFIdiomModel.m; sourceTree = "<group>"; };
+		F50A691218BB0B3300AAB03E /* ParseForSqliteForChengwuWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseForSqliteForChengwuWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50A691518BB0B3300AAB03E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F50A691818BB0B3300AAB03E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F50A691918BB0B3300AAB03E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F50A691A18BB0B3300AAB03E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F50A691D18BB0B3300AAB03E /* ParseForSqliteForChengwuWar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParseForSqliteForChengwuWar-Info.plist"; sourceTree = "<group>"; };
+		F50A691F18BB0B3300AAB03E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F50A692118BB0B3300AAB03E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F50A692318BB0B3300AAB03E /* ParseForSqliteForChengwuWar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParseForSqliteForChengwuWar-Prefix.pch"; sourceTree = "<group>"; };
+		F50A692518BB0B3300AAB03E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F50A692718BB0B3300AAB03E /* JFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFAppDelegate.h; sourceTree = "<group>"; };
+		F50A692818BB0B3300AAB03E /* JFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFAppDelegate.m; sourceTree = "<group>"; };
+		F50A692B18BB0B3300AAB03E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F50A693318BB0B3300AAB03E /* ParseForSqliteForChengwuWarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParseForSqliteForChengwuWarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50A693418BB0B3300AAB03E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F50A693B18BB0B3300AAB03E /* ParseForSqliteForChengwuWarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParseForSqliteForChengwuWarTests-Info.plist"; sourceTree = "<group>"; };
+		F50A693D18BB0B3300AAB03E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F50A693F18BB0B3300AAB03E /* ParseForSqliteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseForSqliteTests.m; sourceTree = "<group>"; };
+		F50A694918BB0B6200AAB03E /* JFPhaseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFPhaseData.h; sourceTree = "<group>"; };
+		F50A694A18BB0B6200AAB03E /* JFPhaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFPhaseData.m; sourceTree = "<group>"; };
+		F50A694C18BB0E6B00AAB03E /* SQLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLOperation.h; sourceTree = "<group>"; };
+		F50A694D18BB0E6B00AAB03E /* SQLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLOperation.m; sourceTree = "<group>"; };
+		F50A694F18BB0E8D00AAB03E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F50A695018BB0E8D00AAB03E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F50A695118BB0E8D00AAB03E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F50A695218BB0E8D00AAB03E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F50A695318BB0E8D00AAB03E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F50A695418BB0E8D00AAB03E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F50A695518BB0E8D00AAB03E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F50A695618BB0E8D00AAB03E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F50A695718BB0E8D00AAB03E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F50A695818BB0E8D00AAB03E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F50A695F18BB0EB700AAB03E /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		F50A696118BB0EF700AAB03E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F50A696318BB0F5100AAB03E /* JFSQLManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFSQLManger.h; sourceTree = "<group>"; };
+		F50A696418BB0F5100AAB03E /* JFSQLManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFSQLManger.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F50A690F18BB0B3300AAB03E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50A696018BB0EB700AAB03E /* libxml2.2.dylib in Frameworks */,
+				F50A696218BB0EF700AAB03E /* libsqlite3.dylib in Frameworks */,
+				F50A691618BB0B3300AAB03E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50A693018BB0B3300AAB03E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50A693618BB0B3300AAB03E /* Cocoa.framework in Frameworks */,
+				F50A693518BB0B3300AAB03E /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F50A690918BB0B3200AAB03E = {
+			isa = PBXGroup;
+			children = (
+				F50A691B18BB0B3300AAB03E /* ParseForSqlite */,
+				F50A693918BB0B3300AAB03E /* ParseForSqliteTests */,
+				F50A691418BB0B3300AAB03E /* Frameworks */,
+				F50A691318BB0B3300AAB03E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F50A691318BB0B3300AAB03E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F50A691218BB0B3300AAB03E /* ParseForSqliteForChengwuWar.app */,
+				F50A693318BB0B3300AAB03E /* ParseForSqliteForChengwuWarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F50A691418BB0B3300AAB03E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F50A696118BB0EF700AAB03E /* libsqlite3.dylib */,
+				F50A695F18BB0EB700AAB03E /* libxml2.2.dylib */,
+				F50A691518BB0B3300AAB03E /* Cocoa.framework */,
+				F50A693418BB0B3300AAB03E /* XCTest.framework */,
+				F50A691718BB0B3300AAB03E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F50A691718BB0B3300AAB03E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F50A691818BB0B3300AAB03E /* AppKit.framework */,
+				F50A691918BB0B3300AAB03E /* CoreData.framework */,
+				F50A691A18BB0B3300AAB03E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F50A691B18BB0B3300AAB03E /* ParseForSqlite */ = {
+			isa = PBXGroup;
+			children = (
+				F50A692718BB0B3300AAB03E /* JFAppDelegate.h */,
+				F50A692818BB0B3300AAB03E /* JFAppDelegate.m */,
+				F50A694918BB0B6200AAB03E /* JFPhaseData.h */,
+				F50A694A18BB0B6200AAB03E /* JFPhaseData.m */,
+				F50A694C18BB0E6B00AAB03E /* SQLOperation.h */,
+				F50A694D18BB0E6B00AAB03E /* SQLOperation.m */,
+				8FE90E2C199207EB00C67766 /* JFPhaseXmlData.h */,
+				8FE90E2D199207EB00C67766 /* JFPhaseXmlData.m */,
+				8FE90E321992089C00C67766 /* JFIdiomModel.h */,
+				8FE90E331992089C00C67766 /* JFIdiomModel.m */,
+				F50A696318BB0F5100AAB03E /* JFSQLManger.h */,
+				F50A696418BB0F5100AAB03E /* JFSQLManger.m */,
+				F50A692A18BB0B3300AAB03E /* MainMenu.xib */,
+				8FE90E2F1992080B00C67766 /* GDataXMLNode.h */,
+				8FE90E301992080B00C67766 /* GDataXMLNode.m */,
+				F50A695E18BB0E9A00AAB03E /* FMDB */,
+				F50A691C18BB0B3300AAB03E /* Supporting Files */,
+			);
+			path = ParseForSqlite;
+			sourceTree = "<group>";
+		};
+		F50A691C18BB0B3300AAB03E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F50A691D18BB0B3300AAB03E /* ParseForSqliteForChengwuWar-Info.plist */,
+				F50A691E18BB0B3300AAB03E /* InfoPlist.strings */,
+				F50A692118BB0B3300AAB03E /* main.m */,
+				F50A692318BB0B3300AAB03E /* ParseForSqliteForChengwuWar-Prefix.pch */,
+				F50A692418BB0B3300AAB03E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F50A693918BB0B3300AAB03E /* ParseForSqliteTests */ = {
+			isa = PBXGroup;
+			children = (
+				F50A693F18BB0B3300AAB03E /* ParseForSqliteTests.m */,
+				F50A693A18BB0B3300AAB03E /* Supporting Files */,
+			);
+			path = ParseForSqliteTests;
+			sourceTree = "<group>";
+		};
+		F50A693A18BB0B3300AAB03E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F50A693B18BB0B3300AAB03E /* ParseForSqliteForChengwuWarTests-Info.plist */,
+				F50A693C18BB0B3300AAB03E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F50A695E18BB0E9A00AAB03E /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				F50A694F18BB0E8D00AAB03E /* FMDatabase.h */,
+				F50A695018BB0E8D00AAB03E /* FMDatabase.m */,
+				F50A695118BB0E8D00AAB03E /* FMDatabaseAdditions.h */,
+				F50A695218BB0E8D00AAB03E /* FMDatabaseAdditions.m */,
+				F50A695318BB0E8D00AAB03E /* FMDatabasePool.h */,
+				F50A695418BB0E8D00AAB03E /* FMDatabasePool.m */,
+				F50A695518BB0E8D00AAB03E /* FMDatabaseQueue.h */,
+				F50A695618BB0E8D00AAB03E /* FMDatabaseQueue.m */,
+				F50A695718BB0E8D00AAB03E /* FMResultSet.h */,
+				F50A695818BB0E8D00AAB03E /* FMResultSet.m */,
+			);
+			name = FMDB;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F50A691118BB0B3300AAB03E /* ParseForSqliteForChengwuWar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F50A694318BB0B3300AAB03E /* Build configuration list for PBXNativeTarget "ParseForSqliteForChengwuWar" */;
+			buildPhases = (
+				F50A690E18BB0B3300AAB03E /* Sources */,
+				F50A690F18BB0B3300AAB03E /* Frameworks */,
+				F50A691018BB0B3300AAB03E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParseForSqliteForChengwuWar;
+			productName = ParseForSqlite;
+			productReference = F50A691218BB0B3300AAB03E /* ParseForSqliteForChengwuWar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F50A693218BB0B3300AAB03E /* ParseForSqliteForChengwuWarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F50A694618BB0B3300AAB03E /* Build configuration list for PBXNativeTarget "ParseForSqliteForChengwuWarTests" */;
+			buildPhases = (
+				F50A692F18BB0B3300AAB03E /* Sources */,
+				F50A693018BB0B3300AAB03E /* Frameworks */,
+				F50A693118BB0B3300AAB03E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F50A693818BB0B3300AAB03E /* PBXTargetDependency */,
+			);
+			name = ParseForSqliteForChengwuWarTests;
+			productName = ParseForSqliteTests;
+			productReference = F50A693318BB0B3300AAB03E /* ParseForSqliteForChengwuWarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F50A690A18BB0B3200AAB03E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JF;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = com.lelechat.chengyuwar;
+				TargetAttributes = {
+					F50A693218BB0B3300AAB03E = {
+						TestTargetID = F50A691118BB0B3300AAB03E;
+					};
+				};
+			};
+			buildConfigurationList = F50A690D18BB0B3200AAB03E /* Build configuration list for PBXProject "ParseForSqliteForChengwuWar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F50A690918BB0B3200AAB03E;
+			productRefGroup = F50A691318BB0B3300AAB03E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F50A691118BB0B3300AAB03E /* ParseForSqliteForChengwuWar */,
+				F50A693218BB0B3300AAB03E /* ParseForSqliteForChengwuWarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F50A691018BB0B3300AAB03E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50A692018BB0B3300AAB03E /* InfoPlist.strings in Resources */,
+				F50A692618BB0B3300AAB03E /* Credits.rtf in Resources */,
+				F50A692C18BB0B3300AAB03E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50A693118BB0B3300AAB03E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50A693E18BB0B3300AAB03E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F50A690E18BB0B3300AAB03E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50A692918BB0B3300AAB03E /* JFAppDelegate.m in Sources */,
+				8FE90E2E199207EB00C67766 /* JFPhaseXmlData.m in Sources */,
+				F50A695C18BB0E8D00AAB03E /* FMDatabaseQueue.m in Sources */,
+				F50A696518BB0F5100AAB03E /* JFSQLManger.m in Sources */,
+				F50A692218BB0B3300AAB03E /* main.m in Sources */,
+				8FE90E311992080B00C67766 /* GDataXMLNode.m in Sources */,
+				F50A694E18BB0E6B00AAB03E /* SQLOperation.m in Sources */,
+				F50A695918BB0E8D00AAB03E /* FMDatabase.m in Sources */,
+				8FE90E341992089C00C67766 /* JFIdiomModel.m in Sources */,
+				F50A695B18BB0E8D00AAB03E /* FMDatabasePool.m in Sources */,
+				F50A695D18BB0E8D00AAB03E /* FMResultSet.m in Sources */,
+				F50A694B18BB0B6200AAB03E /* JFPhaseData.m in Sources */,
+				F50A695A18BB0E8D00AAB03E /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50A692F18BB0B3300AAB03E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50A694018BB0B3300AAB03E /* ParseForSqliteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F50A693818BB0B3300AAB03E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F50A691118BB0B3300AAB03E /* ParseForSqliteForChengwuWar */;
+			targetProxy = F50A693718BB0B3300AAB03E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F50A691E18BB0B3300AAB03E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F50A691F18BB0B3300AAB03E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F50A692418BB0B3300AAB03E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F50A692518BB0B3300AAB03E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F50A692A18BB0B3300AAB03E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F50A692B18BB0B3300AAB03E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		F50A693C18BB0B3300AAB03E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F50A693D18BB0B3300AAB03E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F50A694118BB0B3300AAB03E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F50A694218BB0B3300AAB03E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F50A694418BB0B3300AAB03E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParseForSqlite/ParseForSqliteForChengwuWar-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = "ParseForSqlite/ParseForSqliteForChengwuWar-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = ParseForSqliteForChengwuWar;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F50A694518BB0B3300AAB03E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParseForSqlite/ParseForSqliteForChengwuWar-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = "ParseForSqlite/ParseForSqliteForChengwuWar-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = ParseForSqliteForChengwuWar;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F50A694718BB0B3300AAB03E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ParseForSqlite.app/Contents/MacOS/ParseForSqlite";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParseForSqlite/ParseForSqlite-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ParseForSqliteTests/ParseForSqliteForChengwuWarTests-Info.plist";
+				PRODUCT_NAME = ParseForSqliteForChengwuWarTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F50A694818BB0B3300AAB03E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ParseForSqlite.app/Contents/MacOS/ParseForSqlite";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ParseForSqlite/ParseForSqlite-Prefix.pch";
+				INFOPLIST_FILE = "ParseForSqliteTests/ParseForSqliteForChengwuWarTests-Info.plist";
+				PRODUCT_NAME = ParseForSqliteForChengwuWarTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F50A690D18BB0B3200AAB03E /* Build configuration list for PBXProject "ParseForSqliteForChengwuWar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F50A694118BB0B3300AAB03E /* Debug */,
+				F50A694218BB0B3300AAB03E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F50A694318BB0B3300AAB03E /* Build configuration list for PBXNativeTarget "ParseForSqliteForChengwuWar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F50A694418BB0B3300AAB03E /* Debug */,
+				F50A694518BB0B3300AAB03E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F50A694618BB0B3300AAB03E /* Build configuration list for PBXNativeTarget "ParseForSqliteForChengwuWarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F50A694718BB0B3300AAB03E /* Debug */,
+				F50A694818BB0B3300AAB03E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F50A690A18BB0B3200AAB03E /* Project object */;
+}
