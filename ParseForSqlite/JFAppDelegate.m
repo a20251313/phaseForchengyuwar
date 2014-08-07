@@ -50,10 +50,71 @@
 -(IBAction)clickStart:(id)sender
 {
    
-    [NSThread detachNewThreadSelector:@selector(phaseData) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(phaseOtherData) toTarget:self withObject:nil];
   //  [JFSQLManger closeDB];
 }
 
+-(void)phaseOtherData
+{
+    NSError *error = nil;
+    NSString    *strFile = @"/Users/aplee/Desktop/封装类以及方法/www/jsQuestion.js";
+    NSString    *strContent = [NSString stringWithContentsOfFile:strFile encoding:NSUTF8StringEncoding error:&error];
+    if (error || strContent == nil)
+    {
+        NSLog(@"strFile is not right:%@",strFile);
+    }
+    
+    NSArray *array = [strContent componentsSeparatedByString:@"\r"];
+    if (array.count)
+    {
+        NSLog(@"222array.count:%ld",array.count);
+    }else
+    {
+         NSLog(@"111array.count:%ld",array.count);
+    }
+    
+    int index = 301;
+    for (NSString *strInfo in array)
+    {
+        if ([strInfo length] < 40)
+        {
+            continue;
+        }
+        
+        
+        NSRange range = [strInfo rangeOfString:@"="];
+        
+        strInfo = [strInfo substringFromIndex:range.location+2];
+        
+        if ([strInfo length] < 10)
+        {
+            continue;
+        }
+        strInfo = [strInfo stringByReplacingOccurrencesOfString:@"[" withString:@""];
+        strInfo = [strInfo stringByReplacingOccurrencesOfString:@"]" withString:@""];
+        strInfo = [strInfo stringByReplacingOccurrencesOfString:@"<br>" withString:@"\n"];
+        NSArray *subarray = [strInfo componentsSeparatedByString:@","];
+        if (subarray.count)
+        {
+            NSLog(@"subarray.count:%ld",subarray.count);
+        }
+        NSString    *strAnswer = [NSString stringWithFormat:@"%@%@%@%@",subarray[0],subarray[1],subarray[2],subarray[3]];
+        strAnswer = [strAnswer stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+        strAnswer = [strAnswer stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSString    *strImage = subarray[4];
+        strImage = [strImage stringByReplacingOccurrencesOfString:@"images/" withString:@""];
+        NSString    *strOption = [NSString stringWithFormat:@"%@%@%@%@%@%@",subarray[5],subarray[6],subarray[7],subarray[8],subarray[9],subarray[10]];
+        strOption = [strOption stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+         strOption = [strOption stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSString    *strExplain = subarray[11];
+        NSString    *strFrom = subarray[12];
+        
+        [[SQLOperation sharedSQLOperation] insertIdiomTabelTabel:index hardType:1 imagePath:strImage Answer:strAnswer optionStr:strOption from:strFrom Explain:strExplain];
+        index++;
+        
+    }
+    
+}
 
 -(void)phaseData
 {

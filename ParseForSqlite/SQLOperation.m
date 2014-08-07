@@ -22,7 +22,7 @@ static SQLOperation *operation = nil;
     
     NSString    *strFilePath =  [documentsDirectory stringByAppendingPathComponent:kDatabaseName];
     
-    if ([[NSFileManager defaultManager] fileExistsAtPath:strFilePath])
+    if (![[NSFileManager defaultManager] fileExistsAtPath:strFilePath])
     {
        BOOL bsuc =  [[NSFileManager defaultManager] createFileAtPath:strFilePath contents:nil attributes:nil];
         if (!bsuc)
@@ -130,6 +130,7 @@ static SQLOperation *operation = nil;
 }
 - (void)createIdiomTabel
 {
+    return;
     [self.dbQueue inDatabase:^(FMDatabase *db)
      {
          
@@ -166,7 +167,7 @@ static SQLOperation *operation = nil;
             DLOG(@"insertPuzzleTabel  open fail");
         }
         
-        NSString *insertSql = [[NSString alloc] initWithFormat:@"insert into IDIOMINFOTABLE(ID,IDIOMINDEX, HARDTYPE, IMAGEPATH, ANSWER, OPTIONSTR, IDIOMFROM,EXPLAIN) values(NULL,'%d','%d','%@', '%@', '%@', '%@','%@')",index,hardType,imagePath,answer,optionStr,strFrom,explain];
+        NSString *insertSql = [[NSString alloc] initWithFormat:@"insert into IDIOMINFOTABLE(IDIOMINDEX, HARDTYPE, IMAGEPATH, ANSWER, OPTIONSTR, IDIOMFROM,EXPLAIN) values('%d','%d','%@', '%@', '%@', '%@','%@')",index,hardType,imagePath,answer,optionStr,strFrom,explain];
         
         if (![db executeUpdate:insertSql])
         {
