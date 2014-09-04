@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F8F8A7D19B8150E00D6CED6 /* JFQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F8A7C19B8150E00D6CED6 /* JFQuestionModel.m */; };
 		8FE90E2E199207EB00C67766 /* JFPhaseXmlData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE90E2D199207EB00C67766 /* JFPhaseXmlData.m */; };
 		8FE90E311992080B00C67766 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE90E301992080B00C67766 /* GDataXMLNode.m */; };
 		8FE90E341992089C00C67766 /* JFIdiomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE90E331992089C00C67766 /* JFIdiomModel.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F8F8A7B19B8150E00D6CED6 /* JFQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFQuestionModel.h; sourceTree = "<group>"; };
+		8F8F8A7C19B8150E00D6CED6 /* JFQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFQuestionModel.m; sourceTree = "<group>"; };
 		8FE90E2C199207EB00C67766 /* JFPhaseXmlData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFPhaseXmlData.h; sourceTree = "<group>"; };
 		8FE90E2D199207EB00C67766 /* JFPhaseXmlData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFPhaseXmlData.m; sourceTree = "<group>"; };
 		8FE90E2F1992080B00C67766 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				F50A692818BB0B3300AAB03E /* JFAppDelegate.m */,
 				F50A694918BB0B6200AAB03E /* JFPhaseData.h */,
 				F50A694A18BB0B6200AAB03E /* JFPhaseData.m */,
+				8F8F8A7B19B8150E00D6CED6 /* JFQuestionModel.h */,
+				8F8F8A7C19B8150E00D6CED6 /* JFQuestionModel.m */,
 				F50A694C18BB0E6B00AAB03E /* SQLOperation.h */,
 				F50A694D18BB0E6B00AAB03E /* SQLOperation.m */,
 				8FE90E2C199207EB00C67766 /* JFPhaseXmlData.h */,
@@ -325,6 +330,7 @@
 				F50A695C18BB0E8D00AAB03E /* FMDatabaseQueue.m in Sources */,
 				F50A696518BB0F5100AAB03E /* JFSQLManger.m in Sources */,
 				F50A692218BB0B3300AAB03E /* main.m in Sources */,
+				8F8F8A7D19B8150E00D6CED6 /* JFQuestionModel.m in Sources */,
 				8FE90E311992080B00C67766 /* GDataXMLNode.m in Sources */,
 				F50A694E18BB0E6B00AAB03E /* SQLOperation.m in Sources */,
 				F50A695918BB0E8D00AAB03E /* FMDatabase.m in Sources */,

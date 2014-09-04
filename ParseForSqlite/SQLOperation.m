@@ -99,8 +99,185 @@ static SQLOperation *operation = nil;
 //    [self createUnlockPurchaseTable];
     [self createPuzzleTabel];
     [self createIdiomTabel];
+    [self createQuestionsTabel];
 }
 
+
+#pragma mark    问答天下题目
+- (void)createQuestionsTabel
+{
+    [self.dbQueue inDatabase:^(FMDatabase *db)
+     {
+         
+         if (![db open])
+         {
+             DLOG(@"createPuzzleTabel  open fail");
+         }
+         NSString *createSQL = @"CREATE TABLE IF NOT EXISTS Question(ID INTEGER PRIMARY KEY, QUESTION TEXT,ANSWER TEXT,QUESTIONCATIERY  TEXT,AOPTION TEXT,BOPTION TEXT,COPTION TEXT,DOPTION TEXT,RIGHTOPTION TEXT,EXPLAIN  TEXT,QUESTIONINDEX INT)";
+         
+         if (![db executeUpdate:createSQL])
+         {
+             DLOG(@"createQuestionsTabel fail:%@",createSQL);
+         };
+         if (![db close])
+         {
+             
+             DLOG(@"createQuestionsTabel  close fail");
+         }
+         
+         
+     }];
+}
+-(void)insertQuestionsTabel:(int)index question:(NSString*)question Answer:(NSString*)answer cateary:(NSString*)strCateary AoptionStr:(NSString*)AoptionStr BoptionStr:(NSString*)BoptionStr CoptionStr:(NSString*)CoptionStr DoptionStr:(NSString*)DoptionStr RightoptionStr:(NSString*)rightoptionStr Explain:(NSString*)explain
+{
+    
+    
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        if (![db open])
+        {
+            DLOG(@"insertPuzzleTabel  open fail");
+        }
+        
+        NSString *insertSql = [[NSString alloc] initWithFormat:@"insert into Question(QUESTIONINDEX, QUESTION, ANSWER, QUESTIONCATIERY, AOPTION, BOPTION,COPTION,DOPTION,RIGHTOPTION,EXPLAIN) values('%d','%@','%@', '%@', '%@', '%@','%@','%@','%@','%@')",index,question,answer,strCateary,AoptionStr,BoptionStr,CoptionStr,DoptionStr,rightoptionStr,explain];
+        
+        if (![db executeUpdate:insertSql])
+        {
+            DLOG(@"insertQuestionsTabel:%@  fail",insertSql);
+        }
+        
+        
+        [insertSql release];
+        
+        if (![db close])
+        {
+            
+            DLOG(@"insertQuestionsTabel  close fail");
+        }
+        
+    }];
+    
+}
+
+-(void)UpdateQuestionsTabel:(int)index question:(NSString*)question Answer:(NSString*)answer cateary:(NSString*)strCateary AoptionStr:(NSString*)AoptionStr BoptionStr:(NSString*)BoptionStr CoptionStr:(NSString*)CoptionStr DoptionStr:(NSString*)DoptionStr RightoptionStr:(NSString*)rightoptionStr Explain:(NSString*)explain
+{
+    
+    
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        if (![db open])
+        {
+            DLOG(@"UpdateQuestionsTabel  open fail");
+        }
+        
+        NSString *insertSql = [[NSString alloc] initWithFormat:@"update Question set QUESTION='%@',ANSWER='%@',QUESTIONCATIERY='%@',AOPTION='%@',BOPTION='%@',COPTION='%@',DOPTION='%@',RIGHTOPTION='%@',EXPLAIN='%@' where QUESTIONINDEX=%d",question,answer,strCateary,AoptionStr,BoptionStr,CoptionStr,DoptionStr,rightoptionStr,explain,index];
+        
+        if (![db executeUpdate:insertSql])
+        {
+            DLOG(@"UpdateQuestionsTabel:%@  fail",insertSql);
+        }
+        
+        
+        [insertSql release];
+        
+        if (![db close])
+        {
+            
+            DLOG(@"UpdateQuestionsTabel  close fail");
+        }
+        
+    }];
+    
+}
+
+-(void)deleteQuestionsTabel
+{
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        if (![db open])
+        {
+            DLOG(@"deleteQuestionsTabel  open fail");
+        }
+        
+        NSString *insertSql = [[NSString alloc] initWithFormat:@"delete from Question"];
+        
+        if (![db executeUpdate:insertSql])
+        {
+            DLOG(@"executeUpdate:%@  fail",insertSql);
+        }
+        
+        
+        [insertSql release];
+        
+        if (![db close])
+        {
+            
+            DLOG(@"deleteQuestionsTabel  close fail");
+        }
+        
+    }];
+    
+}
+
+-(NSMutableArray*)getAllQuestions
+{
+    
+    
+    //(ID INTEGER PRIMARY KEY, QUESTION TEXT,ANSWER TEXT,QUESTIONCATIERY  TEXT,AOPTION TEXT,BOPTION TEXT,COPTION TEXT,DOPTION TEXT,RIGHTOPTION TEXT,EXPLAIN  TEXT,QUESTIONINDEX INT)
+    __block NSMutableArray *array = [[[NSMutableArray alloc] initWithCapacity:0] autorelease];
+    
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        [db open];
+        
+        NSString *query = [[NSString alloc] initWithFormat: @"select * from Question"];
+        
+        FMResultSet *rs = [db executeQuery:query];
+        
+        [query release];
+        
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        
+        while (rs.next)
+        {
+            
+            NSString    *strAnswer = [rs stringForColumnIndex:2];
+            NSString    *strQuestion = [rs stringForColumnIndex:1];
+            NSString    *strCatiary = [rs stringForColumnIndex:3];
+            NSString    *strAoption = [rs stringForColumnIndex:4];
+            NSString    *strBoption = [rs stringForColumnIndex:5];
+            NSString    *strCoption = [rs stringForColumnIndex:6];
+            NSString    *strDoption = [rs stringForColumnIndex:7];
+            NSString    *strRightOption = [rs stringForColumnIndex:8];
+            NSString    *strExplain = [rs stringForColumnIndex:9];
+            int         index = [rs intForColumnIndex:10];
+            strAnswer = [strAnswer stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strQuestion = [strQuestion stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strCatiary = [strCatiary stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strAoption = [strAoption stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strBoption = [strBoption stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strCoption = [strCoption stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strDoption = [strDoption stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strRightOption = [strRightOption stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            strExplain = [strExplain stringByReplacingOccurrencesOfString:@"单单引引号号" withString:@"'"];
+            
+            
+            NSDictionary *infoDic = [NSDictionary dictionaryWithObjectsAndKeys:@(index),@"index",strAnswer,@"answer",strQuestion,@"question",strCatiary,@"cateary",strAoption,@"Aoption",strBoption,@"Boption",strCoption,@"Coption",strDoption,@"Doption",strRightOption,@"rightoption",strExplain,@"explain",nil];
+            [array addObject:infoDic];
+            
+            //DLOG(@"infoDic:%@",infoDic);
+        }
+        
+        [rs close];
+        
+        [db close];
+        
+        [pool release];
+        
+    }];
+    
+    return array;
+}
 
 #pragma mark puzzles
 
@@ -128,9 +305,87 @@ static SQLOperation *operation = nil;
          
      }];
 }
+
+
+-(void)deleteAllIdioms
+{
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        if (![db open])
+        {
+            DLOG(@"deleteAllIdioms  open fail");
+        }
+        
+        NSString *insertSql = [[NSString alloc] initWithFormat:@"delete from IDIOMINFOTABLE"];
+        
+        if (![db executeUpdate:insertSql])
+        {
+            DLOG(@"executeUpdate:%@  fail",insertSql);
+        }
+        
+        
+        [insertSql release];
+        
+        if (![db close])
+        {
+            
+            DLOG(@"deleteAllIdioms  close fail");
+        }
+        
+    }];
+    
+}
+
+-(NSMutableArray*)getAllIdiomModels
+{
+    
+    __block NSMutableArray *array = [[[NSMutableArray alloc] initWithCapacity:0] autorelease];
+    
+    [self.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        [db open];
+        
+        NSString *query = [[NSString alloc] initWithFormat: @"select * from IDIOMINFOTABLE"];
+        
+        FMResultSet *rs = [db executeQuery:query];
+        
+        [query release];
+        
+        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        
+        while (rs.next)
+        {
+            
+            int index = [rs intForColumnIndex:1];
+            int hardType = [rs intForColumnIndex:2];
+            NSString    *strPath = [rs stringForColumnIndex:3];
+            NSString    *strAnswer = [rs stringForColumnIndex:4];
+            NSString    *strOption = [rs stringForColumnIndex:5];
+            NSString    *strFrom = [rs stringForColumnIndex:6];
+            NSString    *strExplain = [rs stringForColumnIndex:7];
+            
+            
+            
+            
+            NSDictionary *infoDic = [NSDictionary dictionaryWithObjectsAndKeys:@(index),@"index",@(hardType),@"hardType",strPath,@"imageName",strAnswer,@"answer",strOption,@"option",strFrom,@"from",strExplain,@"explain",nil];
+            [array addObject:infoDic];
+            
+            //DLOG(@"infoDic:%@",infoDic);
+        }
+        
+        [rs close];
+        
+        [db close];
+        
+        [pool release];
+        
+    }];
+    
+    return array;
+}
 - (void)createIdiomTabel
 {
-    return;
+    
     [self.dbQueue inDatabase:^(FMDatabase *db)
      {
          

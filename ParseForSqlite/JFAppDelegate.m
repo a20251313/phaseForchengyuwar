@@ -12,6 +12,7 @@
 #import "JFPhaseXmlData.h"
 #import "SQLOperation.h"
 #import "JFIdiomModel.h"
+#import "JFQuestionModel.h"
 
 #define FILEPATH    @"/Users/popo/Desktop/Documents/csv/tiku3.csv"
 @implementation JFAppDelegate
@@ -50,8 +51,171 @@
 -(IBAction)clickStart:(id)sender
 {
    
-    [NSThread detachNewThreadSelector:@selector(phaseOtherData) toTarget:self withObject:nil];
-  //  [JFSQLManger closeDB];
+   [NSThread detachNewThreadSelector:@selector(getAllDataFromPlist) toTarget:self withObject:nil];
+  // [JFSQLManger closeDB];
+}
+
+-(void)getAllDataFromPlist //获取问答天下的题目
+{
+    NSString    *docPath = @"/Users/aplee/百度云同步盘/问答天下题目";
+    NSMutableArray  *arrayInfo = [NSMutableArray array];
+    [[SQLOperation sharedSQLOperation] deleteQuestionsTabel];
+    
+    int index = 0;
+    NSArray     *arraySubPath = [[NSFileManager defaultManager] subpathsAtPath:docPath];
+    for (NSString *strSubPath in arraySubPath)
+    {
+        
+        if (![strSubPath hasSuffix:@"plist"])
+        {
+            continue;
+        }
+        NSString    *strTempPath = [docPath stringByAppendingPathComponent:strSubPath];
+        NSString    *strCatery = [strSubPath stringByReplacingOccurrencesOfString:@"1" withString:@""];
+        strCatery = [strCatery stringByReplacingOccurrencesOfString:@"2" withString:@""];
+        strCatery = [strCatery stringByReplacingOccurrencesOfString:@".plist" withString:@""];
+        strCatery = [strCatery stringByReplacingOccurrencesOfString:@"3" withString:@""];
+        strCatery = [strCatery stringByReplacingOccurrencesOfString:@"4" withString:@""];
+        
+        NSArray *arrayPlist = [NSArray arrayWithContentsOfFile:strTempPath];
+        for (NSArray *arrayData in arrayPlist)
+        {
+            if (![arrayData isKindOfClass:[NSArray class]])
+            {
+                continue;
+            }
+            NSMutableArray  *subArray = [NSMutableArray array];
+            [subArray addObject:strCatery];
+            [subArray addObjectsFromArray:arrayData];
+            [arrayInfo addObject:subArray];
+            [subArray removeObject:@""];
+            
+            JFQuestionModel *model = [[JFQuestionModel alloc] init];
+            if (subArray.count > 9)
+            {
+                model.cateary = subArray[0];
+                model.Question = subArray[2];
+                model.Aoption = subArray[3];
+                model.Boption = subArray[4];
+                model.Coption = subArray[5];
+                model.Doption = subArray[6];
+                if ([subArray[7] isEqualToString:@"A"])
+                {
+                    model.answer = model.Aoption;
+                }else if ([subArray[7] isEqualToString:@"B"])
+                {
+                    model.answer = model.Boption;
+                }else if ([subArray[7] isEqualToString:@"C"])
+                {
+                    model.answer = model.Coption;
+                }else if ([subArray[7] isEqualToString:@"D"])
+                {
+                    model.answer = model.Doption;
+                }
+                model.rightOption = subArray[7];
+                
+                if ([subArray[8] isKindOfClass:[NSString class]])
+                {
+                    model.explain = subArray[8];
+                }
+              //  NSLog(@"subArray:%@ count:%ld",subArray,subArray.count);
+                
+            }else if(subArray.count == 9)
+            {
+                model.cateary = subArray[0];
+                model.Question = subArray[2];
+                model.Aoption = subArray[4];
+                model.Boption = subArray[5];
+                model.Coption = subArray[6];
+                model.Doption = subArray[7];
+                if ([subArray[8] isEqualToString:@"A"])
+                {
+                    model.answer = model.Aoption;
+                }else if ([subArray[8] isEqualToString:@"B"])
+                {
+                    model.answer = model.Boption;
+                }else if ([subArray[8] isEqualToString:@"C"])
+                {
+                    model.answer = model.Coption;
+                }else if ([subArray[8] isEqualToString:@"D"])
+                {
+                    model.answer = model.Doption;
+                }
+                model.rightOption = subArray[8];
+//                if ([subArray[8] isKindOfClass:[NSString class]])
+//                {
+//                    model.explain = subArray[8];
+//                }
+                //NSLog(@"subArray:%@ count:%ld",subArray,subArray.count);
+            }
+            model.index = index;
+            index++;
+            if (index == 1543)
+            {
+                NSLog(@"before 1543");
+ 
+            }
+            
+            [self execptopnModel:model];
+            [[SQLOperation sharedSQLOperation] insertQuestionsTabel:index question:model.Question Answer:model.answer cateary:model.cateary AoptionStr:model.Aoption BoptionStr:model.Boption CoptionStr:model.Coption DoptionStr:model.Doption RightoptionStr:model.rightOption Explain:model.explain];
+             NSLog(@"model:%@",model);
+            if (index == 1543)
+            {
+                NSLog(@"finish 1543");
+              //  return;
+            }
+     
+           
+        }
+     
+        
+        
+    }
+}
+
+-(void)execptopnModel:(JFQuestionModel*)model
+{
+    model.Question = [model.Question stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.answer = [model.answer stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.cateary = [model.cateary stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.Aoption = [model.Aoption stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.Boption = [model.Boption stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.Coption = [model.Coption stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.Doption = [model.Doption stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.rightOption = [model.rightOption stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+    model.explain = [model.explain stringByReplacingOccurrencesOfString:@"'" withString:@"单单引引号号"];
+   // model.Question = [model.Question stringByReplacingOccurrencesOfString:@"'" withString:@"\'"];
+    
+}
+
+-(void)getAllData
+{
+    NSMutableArray *arrayData = [[SQLOperation sharedSQLOperation] getAllIdiomModels];
+    NSMutableArray  *otherarray = [self randomArray:arrayData];
+    [[SQLOperation sharedSQLOperation] deleteAllIdioms];
+    int index = 1;
+    for (NSDictionary *dicInfo in otherarray)
+    {
+        [[SQLOperation sharedSQLOperation] insertIdiomTabelTabel:index hardType:1 imagePath:[dicInfo valueForKey:@"imageName"] Answer:[dicInfo valueForKey:@"answer"] optionStr:[dicInfo valueForKey:@"option"] from:[dicInfo valueForKey:@"from"] Explain:[dicInfo valueForKey:@"explain"]];
+        index++;
+        
+    }
+    NSLog(@"getAllData and write data finish");
+    
+}
+
+-(NSMutableArray*)randomArray:(NSMutableArray*)sourceArray
+{
+    NSMutableArray  *array = [NSMutableArray array];
+    while (sourceArray.count)
+    {
+        srandom((unsigned)(time(NULL)+sourceArray.count));
+        long index = random()%sourceArray.count;
+        [array addObject:sourceArray[index]];
+        [sourceArray removeObjectAtIndex:index];
+    }
+    
+    return array;
 }
 
 -(void)phaseOtherData

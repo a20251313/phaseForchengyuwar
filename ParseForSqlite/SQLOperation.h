@@ -121,5 +121,14 @@
 
 -(void)insertIdiomTabelTabel:(int)index hardType:(int)hardType imagePath:(NSString*)imagePath Answer:(NSString*)answer optionStr:(NSString*)optionStr from:(NSString*)strFrom
                      Explain:(NSString*)explain;
+//获取所有的数据
+-(NSMutableArray*)getAllIdiomModels;
+-(void)deleteAllIdioms;
+
+
+//问答天下
+-(void)UpdateQuestionsTabel:(int)index question:(NSString*)question Answer:(NSString*)answer cateary:(NSString*)strCateary AoptionStr:(NSString*)AoptionStr BoptionStr:(NSString*)BoptionStr CoptionStr:(NSString*)CoptionStr DoptionStr:(NSString*)DoptionStr RightoptionStr:(NSString*)rightoptionStr Explain:(NSString*)explain;
+-(void)insertQuestionsTabel:(int)index question:(NSString*)question Answer:(NSString*)answer cateary:(NSString*)strCateary AoptionStr:(NSString*)AoptionStr BoptionStr:(NSString*)BoptionStr CoptionStr:(NSString*)CoptionStr DoptionStr:(NSString*)DoptionStr RightoptionStr:(NSString*)rightoptionStr Explain:(NSString*)explain;
+-(void)deleteQuestionsTabel;
 
 @end
